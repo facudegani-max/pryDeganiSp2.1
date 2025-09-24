@@ -16,7 +16,7 @@ namespace pryDeganiSp2._1
         const float TELEVISOR = 2;
         const float PORPERSONA = 1;
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
             // cargar los items en el primer control combobox
             cmbTipo.Items.Clear();
