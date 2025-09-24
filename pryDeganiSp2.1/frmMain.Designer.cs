@@ -113,6 +113,7 @@
             cmbPersonas.Name = "cmbPersonas";
             cmbPersonas.Size = new Size(112, 28);
             cmbPersonas.TabIndex = 4;
+            cmbPersonas.SelectedIndexChanged += cmbPersonas_SelectedIndexChanged;
             // 
             // cmbTipo
             // 

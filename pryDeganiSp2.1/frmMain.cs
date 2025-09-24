@@ -5,8 +5,9 @@ namespace pryDeganiSp2._1
         public frmMain()
         {
             InitializeComponent();
-        }
 
+            Load += frmMain_Load;
+        }
 
         // Declaracion de variables constantes para los cálculos
         private const float TIPOA = 20;
@@ -17,8 +18,9 @@ namespace pryDeganiSp2._1
         const float PORPERSONA = 1;
 
         private void frmMain_Load(object sender, EventArgs e)
-        {
-            // cargar los items en el primer control combobox
+        { 
+
+        // cargar los items en el primer control combobox
             cmbTipo.Items.Clear();
             cmbTipo.Items.Add("Tipo A");
             cmbTipo.Items.Add("Tipo B");
@@ -201,6 +203,11 @@ namespace pryDeganiSp2._1
         }
 
         private void cmbTarjeta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbPersonas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
