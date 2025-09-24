@@ -108,6 +108,7 @@
             // 
             // cmbPersonas
             // 
+            cmbPersonas.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPersonas.FormattingEnabled = true;
             cmbPersonas.Location = new Point(340, 60);
             cmbPersonas.Name = "cmbPersonas";
@@ -117,6 +118,7 @@
             // 
             // cmbTipo
             // 
+            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipo.FormattingEnabled = true;
             cmbTipo.Location = new Point(79, 60);
             cmbTipo.Name = "cmbTipo";
@@ -190,6 +192,7 @@
             // 
             // cmbTarjeta
             // 
+            cmbTarjeta.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTarjeta.FormattingEnabled = true;
             cmbTarjeta.Location = new Point(192, 119);
             cmbTarjeta.Name = "cmbTarjeta";

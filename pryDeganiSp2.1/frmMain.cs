@@ -18,9 +18,9 @@ namespace pryDeganiSp2._1
         const float PORPERSONA = 1;
 
         private void frmMain_Load(object sender, EventArgs e)
-        { 
+        {
 
-        // cargar los items en el primer control combobox
+            // cargar los items en el primer control combobox
             cmbTipo.Items.Clear();
             cmbTipo.Items.Add("Tipo A");
             cmbTipo.Items.Add("Tipo B");
@@ -154,10 +154,13 @@ namespace pryDeganiSp2._1
             {
                 PrecioBase = TIPOB;
             }
+
             // sumar al precio base el importe extra por persona (US$ 1)
             PrecioBase = PrecioBase + (PORPERSONA * int.Parse(cmbPersonas.Text));
+
             // controlar los adicionales por las opciones
             Opcionales = 0;
+
             if (chkCocina.Checked == true)
             {
                 Opcionales = Opcionales + COCINA;
@@ -170,6 +173,7 @@ namespace pryDeganiSp2._1
             {
                 Opcionales = Opcionales + TELEVISOR;
             }
+
             // determinar el total por la cantidad de dìas
             Total = (PrecioBase + Opcionales) * Dias;
 
@@ -186,6 +190,7 @@ namespace pryDeganiSp2._1
                 }
                 Total = Total + Recargo;
             }
+
             // mostrar el resultado
             MessageBox.Show("Total = " + Total.ToString(), "Importe de la reserva",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
