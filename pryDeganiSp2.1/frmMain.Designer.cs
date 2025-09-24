@@ -32,23 +32,23 @@
             lblPersonas = new Label();
             lblCant_Dias = new Label();
             groupBoxTipo_Cabaña = new GroupBox();
-            comboBoxTipo_Cabaña = new ComboBox();
-            comboBoxCant_Personas = new ComboBox();
-            textBoxCant_Dias = new TextBox();
+            txtDias = new TextBox();
+            cmbPersonas = new ComboBox();
+            cmbTipo = new ComboBox();
             groupBoxAdicionales = new GroupBox();
-            checkBoxCocina = new CheckBox();
-            checkBoxHeladera = new CheckBox();
-            checkBoxTelevisor = new CheckBox();
+            chkTelevisor = new CheckBox();
+            chkHeladera = new CheckBox();
+            chkCocina = new CheckBox();
             groupBoxForma_Pago = new GroupBox();
-            radioButtonEfectivo = new RadioButton();
-            radioButtonTarjeta = new RadioButton();
-            comboBoxTarjetas = new ComboBox();
             lblTarjetas = new Label();
+            cmbTarjeta = new ComboBox();
+            optTarjeta = new RadioButton();
+            optEfectivo = new RadioButton();
             groupBoxTitular_Reserva = new GroupBox();
-            lblNombre = new Label();
+            txtTelefono = new TextBox();
+            txtNombre = new TextBox();
             labelTelefono = new Label();
-            textBoxNombre = new TextBox();
-            textBoxTelefono = new TextBox();
+            lblNombre = new Label();
             btnAceptar = new Button();
             groupBoxTipo_Cabaña.SuspendLayout();
             groupBoxAdicionales.SuspendLayout();
@@ -85,9 +85,9 @@
             // 
             // groupBoxTipo_Cabaña
             // 
-            groupBoxTipo_Cabaña.Controls.Add(textBoxCant_Dias);
-            groupBoxTipo_Cabaña.Controls.Add(comboBoxCant_Personas);
-            groupBoxTipo_Cabaña.Controls.Add(comboBoxTipo_Cabaña);
+            groupBoxTipo_Cabaña.Controls.Add(txtDias);
+            groupBoxTipo_Cabaña.Controls.Add(cmbPersonas);
+            groupBoxTipo_Cabaña.Controls.Add(cmbTipo);
             groupBoxTipo_Cabaña.Controls.Add(lblTipo);
             groupBoxTipo_Cabaña.Controls.Add(lblCant_Dias);
             groupBoxTipo_Cabaña.Controls.Add(lblPersonas);
@@ -98,34 +98,36 @@
             groupBoxTipo_Cabaña.TabStop = false;
             groupBoxTipo_Cabaña.Text = "Tipo de cabaña";
             // 
-            // comboBoxTipo_Cabaña
+            // txtDias
             // 
-            comboBoxTipo_Cabaña.FormattingEnabled = true;
-            comboBoxTipo_Cabaña.Location = new Point(79, 60);
-            comboBoxTipo_Cabaña.Name = "comboBoxTipo_Cabaña";
-            comboBoxTipo_Cabaña.Size = new Size(151, 28);
-            comboBoxTipo_Cabaña.TabIndex = 3;
+            txtDias.Location = new Point(534, 61);
+            txtDias.Name = "txtDias";
+            txtDias.Size = new Size(98, 27);
+            txtDias.TabIndex = 5;
+            txtDias.TextChanged += txtDias_TextChanged;
             // 
-            // comboBoxCant_Personas
+            // cmbPersonas
             // 
-            comboBoxCant_Personas.FormattingEnabled = true;
-            comboBoxCant_Personas.Location = new Point(340, 60);
-            comboBoxCant_Personas.Name = "comboBoxCant_Personas";
-            comboBoxCant_Personas.Size = new Size(112, 28);
-            comboBoxCant_Personas.TabIndex = 4;
+            cmbPersonas.FormattingEnabled = true;
+            cmbPersonas.Location = new Point(340, 60);
+            cmbPersonas.Name = "cmbPersonas";
+            cmbPersonas.Size = new Size(112, 28);
+            cmbPersonas.TabIndex = 4;
             // 
-            // textBoxCant_Dias
+            // cmbTipo
             // 
-            textBoxCant_Dias.Location = new Point(534, 61);
-            textBoxCant_Dias.Name = "textBoxCant_Dias";
-            textBoxCant_Dias.Size = new Size(98, 27);
-            textBoxCant_Dias.TabIndex = 5;
+            cmbTipo.FormattingEnabled = true;
+            cmbTipo.Location = new Point(79, 60);
+            cmbTipo.Name = "cmbTipo";
+            cmbTipo.Size = new Size(151, 28);
+            cmbTipo.TabIndex = 3;
+            cmbTipo.SelectedIndexChanged += cmbTipo_SelectedIndexChanged;
             // 
             // groupBoxAdicionales
             // 
-            groupBoxAdicionales.Controls.Add(checkBoxTelevisor);
-            groupBoxAdicionales.Controls.Add(checkBoxHeladera);
-            groupBoxAdicionales.Controls.Add(checkBoxCocina);
+            groupBoxAdicionales.Controls.Add(chkTelevisor);
+            groupBoxAdicionales.Controls.Add(chkHeladera);
+            groupBoxAdicionales.Controls.Add(chkCocina);
             groupBoxAdicionales.Location = new Point(43, 173);
             groupBoxAdicionales.Name = "groupBoxAdicionales";
             groupBoxAdicionales.Size = new Size(250, 163);
@@ -133,78 +135,48 @@
             groupBoxAdicionales.TabStop = false;
             groupBoxAdicionales.Text = "Adicionales";
             // 
-            // checkBoxCocina
+            // chkTelevisor
             // 
-            checkBoxCocina.AutoSize = true;
-            checkBoxCocina.Location = new Point(40, 35);
-            checkBoxCocina.Name = "checkBoxCocina";
-            checkBoxCocina.Size = new Size(76, 24);
-            checkBoxCocina.TabIndex = 0;
-            checkBoxCocina.Text = "Cocina";
-            checkBoxCocina.UseVisualStyleBackColor = true;
+            chkTelevisor.AutoSize = true;
+            chkTelevisor.Location = new Point(40, 95);
+            chkTelevisor.Name = "chkTelevisor";
+            chkTelevisor.Size = new Size(89, 24);
+            chkTelevisor.TabIndex = 2;
+            chkTelevisor.Text = "Televisor";
+            chkTelevisor.UseVisualStyleBackColor = true;
             // 
-            // checkBoxHeladera
+            // chkHeladera
             // 
-            checkBoxHeladera.AutoSize = true;
-            checkBoxHeladera.Location = new Point(40, 65);
-            checkBoxHeladera.Name = "checkBoxHeladera";
-            checkBoxHeladera.Size = new Size(92, 24);
-            checkBoxHeladera.TabIndex = 1;
-            checkBoxHeladera.Text = "Heladera";
-            checkBoxHeladera.UseVisualStyleBackColor = true;
+            chkHeladera.AutoSize = true;
+            chkHeladera.Location = new Point(40, 65);
+            chkHeladera.Name = "chkHeladera";
+            chkHeladera.Size = new Size(92, 24);
+            chkHeladera.TabIndex = 1;
+            chkHeladera.Text = "Heladera";
+            chkHeladera.UseVisualStyleBackColor = true;
             // 
-            // checkBoxTelevisor
+            // chkCocina
             // 
-            checkBoxTelevisor.AutoSize = true;
-            checkBoxTelevisor.Location = new Point(40, 95);
-            checkBoxTelevisor.Name = "checkBoxTelevisor";
-            checkBoxTelevisor.Size = new Size(89, 24);
-            checkBoxTelevisor.TabIndex = 2;
-            checkBoxTelevisor.Text = "Televisor";
-            checkBoxTelevisor.UseVisualStyleBackColor = true;
+            chkCocina.AutoSize = true;
+            chkCocina.Location = new Point(40, 35);
+            chkCocina.Name = "chkCocina";
+            chkCocina.Size = new Size(76, 24);
+            chkCocina.TabIndex = 0;
+            chkCocina.Text = "Cocina";
+            chkCocina.UseVisualStyleBackColor = true;
             // 
             // groupBoxForma_Pago
             // 
             groupBoxForma_Pago.Controls.Add(lblTarjetas);
-            groupBoxForma_Pago.Controls.Add(comboBoxTarjetas);
-            groupBoxForma_Pago.Controls.Add(radioButtonTarjeta);
-            groupBoxForma_Pago.Controls.Add(radioButtonEfectivo);
+            groupBoxForma_Pago.Controls.Add(cmbTarjeta);
+            groupBoxForma_Pago.Controls.Add(optTarjeta);
+            groupBoxForma_Pago.Controls.Add(optEfectivo);
             groupBoxForma_Pago.Location = new Point(325, 173);
             groupBoxForma_Pago.Name = "groupBoxForma_Pago";
             groupBoxForma_Pago.Size = new Size(399, 163);
             groupBoxForma_Pago.TabIndex = 5;
             groupBoxForma_Pago.TabStop = false;
             groupBoxForma_Pago.Text = "Forma de Pago";
-            // 
-            // radioButtonEfectivo
-            // 
-            radioButtonEfectivo.AutoSize = true;
-            radioButtonEfectivo.Location = new Point(20, 35);
-            radioButtonEfectivo.Name = "radioButtonEfectivo";
-            radioButtonEfectivo.Size = new Size(83, 24);
-            radioButtonEfectivo.TabIndex = 0;
-            radioButtonEfectivo.TabStop = true;
-            radioButtonEfectivo.Text = "Efectivo";
-            radioButtonEfectivo.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTarjeta
-            // 
-            radioButtonTarjeta.AutoSize = true;
-            radioButtonTarjeta.Location = new Point(20, 65);
-            radioButtonTarjeta.Name = "radioButtonTarjeta";
-            radioButtonTarjeta.Size = new Size(74, 24);
-            radioButtonTarjeta.TabIndex = 1;
-            radioButtonTarjeta.TabStop = true;
-            radioButtonTarjeta.Text = "Tarjeta";
-            radioButtonTarjeta.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxTarjetas
-            // 
-            comboBoxTarjetas.FormattingEnabled = true;
-            comboBoxTarjetas.Location = new Point(192, 119);
-            comboBoxTarjetas.Name = "comboBoxTarjetas";
-            comboBoxTarjetas.Size = new Size(183, 28);
-            comboBoxTarjetas.TabIndex = 2;
             // 
             // lblTarjetas
             // 
@@ -215,10 +187,43 @@
             lblTarjetas.TabIndex = 3;
             lblTarjetas.Text = "Tarjetas";
             // 
+            // cmbTarjeta
+            // 
+            cmbTarjeta.FormattingEnabled = true;
+            cmbTarjeta.Location = new Point(192, 119);
+            cmbTarjeta.Name = "cmbTarjeta";
+            cmbTarjeta.Size = new Size(183, 28);
+            cmbTarjeta.TabIndex = 2;
+            cmbTarjeta.SelectedIndexChanged += cmbTarjeta_SelectedIndexChanged;
+            // 
+            // optTarjeta
+            // 
+            optTarjeta.AutoSize = true;
+            optTarjeta.Location = new Point(20, 65);
+            optTarjeta.Name = "optTarjeta";
+            optTarjeta.Size = new Size(74, 24);
+            optTarjeta.TabIndex = 1;
+            optTarjeta.TabStop = true;
+            optTarjeta.Text = "Tarjeta";
+            optTarjeta.UseVisualStyleBackColor = true;
+            optTarjeta.CheckedChanged += radioButtonTarjeta_CheckedChanged;
+            // 
+            // optEfectivo
+            // 
+            optEfectivo.AutoSize = true;
+            optEfectivo.Location = new Point(20, 35);
+            optEfectivo.Name = "optEfectivo";
+            optEfectivo.Size = new Size(83, 24);
+            optEfectivo.TabIndex = 0;
+            optEfectivo.TabStop = true;
+            optEfectivo.Text = "Efectivo";
+            optEfectivo.UseVisualStyleBackColor = true;
+            optEfectivo.CheckedChanged += optEfectivo_CheckedChanged;
+            // 
             // groupBoxTitular_Reserva
             // 
-            groupBoxTitular_Reserva.Controls.Add(textBoxTelefono);
-            groupBoxTitular_Reserva.Controls.Add(textBoxNombre);
+            groupBoxTitular_Reserva.Controls.Add(txtTelefono);
+            groupBoxTitular_Reserva.Controls.Add(txtNombre);
             groupBoxTitular_Reserva.Controls.Add(labelTelefono);
             groupBoxTitular_Reserva.Controls.Add(lblNombre);
             groupBoxTitular_Reserva.Location = new Point(43, 366);
@@ -228,14 +233,21 @@
             groupBoxTitular_Reserva.TabStop = false;
             groupBoxTitular_Reserva.Text = "Titular Reserva";
             // 
-            // lblNombre
+            // txtTelefono
             // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(52, 38);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
-            lblNombre.TabIndex = 0;
-            lblNombre.Text = "Nombre";
+            txtTelefono.Location = new Point(148, 78);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(427, 27);
+            txtTelefono.TabIndex = 3;
+            txtTelefono.TextChanged += txtTelefono_TextChanged;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(148, 38);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(427, 27);
+            txtNombre.TabIndex = 2;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // labelTelefono
             // 
@@ -246,19 +258,14 @@
             labelTelefono.TabIndex = 1;
             labelTelefono.Text = "Telefono";
             // 
-            // textBoxNombre
+            // lblNombre
             // 
-            textBoxNombre.Location = new Point(148, 38);
-            textBoxNombre.Name = "textBoxNombre";
-            textBoxNombre.Size = new Size(427, 27);
-            textBoxNombre.TabIndex = 2;
-            // 
-            // textBoxTelefono
-            // 
-            textBoxTelefono.Location = new Point(148, 78);
-            textBoxTelefono.Name = "textBoxTelefono";
-            textBoxTelefono.Size = new Size(427, 27);
-            textBoxTelefono.TabIndex = 3;
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(52, 38);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(64, 20);
+            lblNombre.TabIndex = 0;
+            lblNombre.Text = "Nombre";
             // 
             // btnAceptar
             // 
@@ -268,6 +275,7 @@
             btnAceptar.TabIndex = 7;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // frmMain
             // 
@@ -298,21 +306,21 @@
         private Label lblPersonas;
         private Label lblCant_Dias;
         private GroupBox groupBoxTipo_Cabaña;
-        private TextBox textBoxCant_Dias;
-        private ComboBox comboBoxCant_Personas;
-        private ComboBox comboBoxTipo_Cabaña;
+        private TextBox txtDias;
+        private ComboBox cmbPersonas;
+        private ComboBox cmbTipo;
         private GroupBox groupBoxAdicionales;
-        private CheckBox checkBoxTelevisor;
-        private CheckBox checkBoxHeladera;
-        private CheckBox checkBoxCocina;
+        private CheckBox chkTelevisor;
+        private CheckBox chkHeladera;
+        private CheckBox chkCocina;
         private GroupBox groupBoxForma_Pago;
         private Label lblTarjetas;
-        private ComboBox comboBoxTarjetas;
-        private RadioButton radioButtonTarjeta;
-        private RadioButton radioButtonEfectivo;
+        private ComboBox cmbTarjeta;
+        private RadioButton optTarjeta;
+        private RadioButton optEfectivo;
         private GroupBox groupBoxTitular_Reserva;
-        private TextBox textBoxTelefono;
-        private TextBox textBoxNombre;
+        private TextBox txtTelefono;
+        private TextBox txtNombre;
         private Label labelTelefono;
         private Label lblNombre;
         private Button btnAceptar;
