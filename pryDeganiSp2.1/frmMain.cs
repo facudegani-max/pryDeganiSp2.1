@@ -9,6 +9,10 @@ namespace pryDeganiSp2._1
             Load += frmMain_Load;
         }
 
+        public string[,] matReserva = new string[4, 3];
+
+        int indiceFila = 0;
+
         // Declaracion de variables constantes para los cálculos
         private const float TIPOA = 20;
         public const float TIPOB = 34;
@@ -143,8 +147,19 @@ namespace pryDeganiSp2._1
             int Dias;
             float Total;
 
-            // obtener la cantidad de dìas ingresados
-            Dias = int.Parse(txtDias.Text);
+  
+            //Botón de comando "Aceptar"
+            
+                matReserva[indiceFila, 0] = cmbTipo.Text;
+                matReserva[indiceFila, 1] = cmbPersonas.Text;
+                matReserva[indiceFila, 2] = txtDias.Text;
+
+                indiceFila++;
+
+                // obtener la cantidad de dìas ingresados
+                Dias = int.Parse(txtDias.Text);
+
+
             // controlar el tipo de cabaña para determinar el precio base
             if (cmbTipo.SelectedIndex == 0)
             {
